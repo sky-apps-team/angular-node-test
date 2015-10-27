@@ -18,7 +18,8 @@
     "autoprefixer": "^6.0.2",
     "babel": "^5.8.23",
     "babel-core": "^5.8.23",
-    "jshint-stylish": "^2.0.1"
+    "jshint-stylish": "^2.0.1",
+    "mongodb": "^2.0.46"
   },
   "devDependencies": {
     "babel-eslint": "^4.1.1",

@@ -9,11 +9,15 @@ app.get('/echo/:name', (req, res, next) => {
   return next();
 });
 
-let port = app.get('port');
-app.listen(port, (err) => {
-  if (err) {
-    console.log('ERROR on startup', err);
-    process.exit(0);
-  }
-  console.log('Listening on port ' + port);
-});
+if (!module.parent) {
+  let port = app.get('port');
+  app.listen(port, (err) => {
+    if (err) {
+      console.log('ERROR on startup', err);
+      process.exit(0);
+    }
+    console.log('Listening on port ' + port);
+  });
+}
+
+export default app;

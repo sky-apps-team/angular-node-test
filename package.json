@@ -1,0 +1,35 @@
+{
+  "name": "scheiner-angular-node-test",
+  "version": "0.0.1",
+  "private": "true",
+  "engines": {
+    "node": ">=4.2.1",
+    "npm": "2.14.7"
+  },
+  "scripts": {
+    "start": "./node_modules/.bin/babel-node index.js",
+    "dev": "NODE_ENV=dev babel-node index.js",
+    "test": "NODE_ENV=test ./node_modules/.bin/mocha --recursive --check-leaks --reporter spec --bail --compilers js:babel/register ./test",
+    "test-unit": "./node_modules/.bin/mocha --recursive --check-leaks --reporter spec --bail --compilers js:babel/register ./test/unit",
+    "test-spec": "./node_modules/.bin/mocha --recursive --check-leaks --reporter spec --bail --compilers js:babel/register ./test/specs"
+  },
+  "dependencies": {
+    "async": "^1.4.2",
+    "autoprefixer": "^6.0.2",
+    "babel": "^5.8.23",
+    "babel-core": "^5.8.23",
+    "jshint-stylish": "^2.0.1",
+    "mongodb": "^2.0.46"
+  },
+  "devDependencies": {
+    "babel-eslint": "^4.1.1",
+    "chai": "^3.2.0",
+    "eslint": "^1.3.1",
+    "eslint-loader": "^1.0.0",
+    "mocha": "^2.2.5",
+    "nodemon": "^1.4.0",
+    "notify-send": "^0.1.2",
+    "sinon": "^1.15.4",
+    "supertest": "^1.1.0"
+  }
+}

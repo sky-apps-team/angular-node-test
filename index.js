@@ -1,41 +1,19 @@
-import restify from 'restify';
+import express from 'express';
 
-let server = restify.createServer({
-  name: 'scheiner',
-  version: '0.0.1'
-});
+let app = express();
 
-server.use(restify.acceptParser(server.acceptable));
-server.use(restify.queryParser());
-server.use(restify.bodyParser());
+app.set('port', (process.env.PORT || 3000));
 
-server.get('/echo/:name', function (req, res, next) {
+app.get('/echo/:name', (req, res, next) => {
   res.send(req.params);
   return next();
 });
 
-server.listen(3000, function () {
-  console.log('%s listening at %s', server.name, server.url);
+let port = app.get('port');
+app.listen(port, (err) => {
+  if (err) {
+    console.log('ERROR on startup', err);
+    process.exit(0);
+  }
+  console.log('Listening on port ' + port);
 });
-
-
-/*
-var restify = require('restify');
-
-var server = restify.createServer({
-  name: 'myapp',
-  version: '1.0.0'
-});
-server.use(restify.acceptParser(server.acceptable));
-server.use(restify.queryParser());
-server.use(restify.bodyParser());
-
-server.get('/echo/:name', function (req, res, next) {
-  res.send(req.params);
-  return next();
-});
-
-server.listen(8080, function () {
-  console.log('%s listening at %s', server.name, server.url);
-});
-*/

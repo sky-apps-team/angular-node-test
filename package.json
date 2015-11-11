@@ -1,0 +1,28 @@
+{
+  "name": "SkyTest",
+  "version": "1.0.0",
+  "description": "SkyTest",
+  "main": "app.js",
+  "scripts": {
+    "build": "./node_modules/.bin/webpack",
+    "dev": "./node_modules/.bin/webpack-dev-server --progress --colors",
+    "api": "node --harmony api/Server.js",
+    "standard": "./node_modules/.bin/standard"
+  },
+  "author": "Juan Jose Alonso",
+  "license": "ISC",
+  "dependencies": {
+    "angular": "^1.4.7",
+    "angular-ui-router": "^0.2.15",
+    "hapi": "10.1.0",
+    "hapi-cors-headers": "^1.0.0"
+  },
+  "devDependencies": {
+    "angular-webpack-plugin": "0.0.3",
+    "file-loader": "^0.8.4",
+    "html-loader": "^0.3.0",
+    "standard": "^5.2.2",
+    "webpack": "^1.12.0",
+    "webpack-dev-server": "^1.10.1"
+  }
+}

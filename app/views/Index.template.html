@@ -1,0 +1,9 @@
+<h1>Auth Feed</h1>
+<p>Hey, have a look to the authentication logs...</p>
+
+<button ng-click="onReloadClicked()">Reload</button>
+
+
+<ul ng-repeat="log in logs">
+	<li>{{log.ip}} - {{log.datetime}} - {{log.action}} - {{log.username}}</li>
+</ul>

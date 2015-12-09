@@ -14,9 +14,13 @@ app.factory('auth', function($http) {
 });
 
 app.controller("loginController", function($scope, auth) {
+
+    $scope.userLogged = false;
     $scope.submit = function(){
         auth.login($scope.username,$scope.password).then(function(response){
-            console.log(response);
+            if (response && response.data) {
+                $scope.userLogged = response.data.auth;
+            }
         });
     }
 });

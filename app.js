@@ -1,8 +1,10 @@
-var express = require('express')
-var pass = require('./passwd.json')
+var express = require('express');
+var pass = require('./passwd.json');
+var auth = require('./auth.js');
+
+
 
 var app = express();
-
 var bodyParser = require('body-parser')
 
 app.use(express.static('public'));
@@ -16,7 +18,8 @@ app.get('/', function (req, res){
 });
 
 app.get('/user', function(req, res){
-    res.status(200).send({ name: 'toto' })
+    var flag = auth("adMin", "password")
+    res.status(200).send({ auth: flag})
 });
 
 

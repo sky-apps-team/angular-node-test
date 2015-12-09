@@ -1,5 +1,4 @@
-var app = angular.module("testApp", []);
-
+var app = angular.module("testApp", ['ngCookies']);
 
 app.factory('auth', function($http) {
     var factory = {};
@@ -13,13 +12,23 @@ app.factory('auth', function($http) {
     return factory;
 });
 
-app.controller("loginController", function($scope, auth) {
+app.controller("loginController", function($scope, auth, $cookies) {
 
-    $scope.userLogged = false;
+    var logged = $cookies.get('logged')
+    if (logged && logged === true) {
+        // User alread logged in
+        console.log('logged', logged);
+        $scope.userLogged = true;
+    } else {
+        $scope.userLogged = false;
+    }
     $scope.submit = function(){
         auth.login($scope.username,$scope.password).then(function(response){
             if (response && response.data) {
                 $scope.userLogged = response.data.auth;
+                if ($scope.userLogged) {
+                    $cookies.put('logged', 'true');
+                }
             }
         });
     }

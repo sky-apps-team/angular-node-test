@@ -18,10 +18,13 @@ app.get('/', function (req, res){
 });
 
 app.get('/api/login', function(req, res){
-    var flag = auth("adMin", "password")
+    var flag = false;
+    var username = req.param('u');
+    var password = req.param('p');
 
-    console.log('username', req.param('u'))
-    console.log('password', req.param('p'))
+    if (username && password) {
+        flag = auth(username, password);
+    }
     res.status(200).send({ auth: flag})
 });
 

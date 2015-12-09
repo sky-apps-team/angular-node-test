@@ -14,9 +14,9 @@ app.factory('auth', function($http) {
 });
 
 app.controller("loginController", function($scope, auth) {
-    $scope.firstName = "John";
-    $scope.lastName = "Doe";
-    auth.login("username","password").then(function(response){
-        console.log(response);
-    });
+    $scope.submit = function(){
+        auth.login($scope.username,$scope.password).then(function(response){
+            console.log(response);
+        });
+    }
 });

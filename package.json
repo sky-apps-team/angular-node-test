@@ -15,5 +15,8 @@
   "bugs": {
     "url": "https://github.com/rosario/angular-node-test/issues"
   },
-  "homepage": "https://github.com/rosario/angular-node-test#readme"
+  "homepage": "https://github.com/rosario/angular-node-test#readme",
+  "dependencies": {
+    "express": "^4.13.3"
+  }
 }

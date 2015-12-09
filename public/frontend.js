@@ -2,9 +2,13 @@ var app = angular.module("testApp", []);
 
 
 app.factory('auth', function($http) {
-    var factory = {}
+    var factory = {};
     factory.login = function(username, password) {
-      return $http.get('test.json');
+        return $http({
+            url: "/api/login",
+            method: "GET",
+            params: {u:username, p:password}
+        });
     }
     return factory;
 });

@@ -17,10 +17,14 @@ app.get('/', function (req, res){
     res.render('index');
 });
 
-app.get('/user', function(req, res){
+app.get('/api/login', function(req, res){
     var flag = auth("adMin", "password")
+
+    console.log('username', req.param('u'))
+    console.log('password', req.param('p'))
     res.status(200).send({ auth: flag})
 });
+
 
 
 module.exports = app;

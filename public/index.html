@@ -1,0 +1,22 @@
+<html>
+<head>
+    <title>Test</title>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular.min.js"></script>
+    <script src="http://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.1/angular-cookies.min.js"></script>
+
+    <script src="frontend.js"></script>
+</head>
+<body>
+<body ng-app="testApp">
+
+<div ng-controller="loginController">
+    <form ng-submit="submit()">
+    <input type="text" ng-model="username">
+    <input type="text" ng-model="password">
+    <input type="submit" value="Login" />
+    </form>
+
+    <p ng-show="userLogged"> User Logged </p>
+</div>
+</body>
+</html>

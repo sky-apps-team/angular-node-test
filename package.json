@@ -1,0 +1,26 @@
+{
+  "name": "angular-node-test",
+  "version": "1.0.0",
+  "description": "The Apps team at Sky are pleased to send you this unattended test. This means we think your CV is pretty good so we want to see if your approach to work is the same as ours. Our team is very Agile and TDD oriented so we believe a few lines of great code speak more than endless CV pages! We’d like you to use this test to show us how awesome you are at what you do.",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/rosario/angular-node-test.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/rosario/angular-node-test/issues"
+  },
+  "homepage": "https://github.com/rosario/angular-node-test#readme",
+  "dependencies": {
+    "body-parser": "^1.14.1",
+    "chai": "^3.4.1",
+    "express": "^4.13.3",
+    "mocha": "^2.3.4",
+    "supertest": "^1.1.0"
+  }
+}

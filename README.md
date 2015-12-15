@@ -12,3 +12,13 @@ Personal note: 1 hour isn't much really to provide a good solution.
 
 I've been told to add extra 30 mins. I'll add some test to the backend.
 
+
+# Setup
+
+* cd angular-node-test
+* npm install
+* node server.js
+
+# Tests
+
+* mocha spec.js

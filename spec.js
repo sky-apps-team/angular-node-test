@@ -17,7 +17,6 @@ describe('API', function(){
       .expect(200, done);
   });
 
-
   it('/api/login should have auth: false', function(done){
     request(app)
       .get('/api/login')
@@ -41,4 +40,18 @@ describe('API', function(){
         done();
       });
   })
+});
+
+
+describe('Authenticate', function(){
+  beforeEach(function () {
+    authenticate = require('./auth');
+  });
+
+  it('correct username/password should return true', function(done){
+    var flag = authenticate('admin','password')
+    expect(flag).to.equal(true)
+    done();
+  });
+
 });

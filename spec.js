@@ -54,4 +54,22 @@ describe('Authenticate', function(){
     done();
   });
 
+  it('incorrect username/password should return false', function(done){
+    var flag = authenticate('admin','something else')
+    expect(flag).to.equal(false)
+    done();
+  });
+
+  it('username is case insensitive and should return true', function(done){
+    var flag = authenticate('aDMin','password')
+    expect(flag).to.equal(true)
+    done();
+  });
+
+  it('password is case sensitive and should return false', function(done){
+    var flag = authenticate('aDMin','passworD')
+    expect(flag).to.equal(false)
+    done();
+  });
+
 });

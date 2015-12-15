@@ -16,4 +16,17 @@ describe('API', function(){
       .set('Accept', 'application/json')
       .expect(200, done);
   });
+
+
+  it('/api/login should have auth: false', function(done){
+    request(app)
+      .get('/api/login')
+      .set('Accept', 'application/json')
+      .expect(200)
+      .end(function(err, res){
+        expect(res.body).to.have.property("auth");
+        expect(res.body.auth).to.equal(false)
+        done();
+      });
+  })
 });

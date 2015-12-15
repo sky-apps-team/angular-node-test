@@ -19,8 +19,8 @@ app.get('/', function (req, res){
 
 app.get('/api/login', function(req, res){
     var flag = false;
-    var username = req.param('u');
-    var password = req.param('p');
+    var username = req.query['u'];
+    var password = req.query['p'];
 
     if (username && password) {
         flag = auth(username, password);

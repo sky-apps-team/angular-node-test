@@ -1,0 +1,54 @@
+<div id="home-page">
+    <div class="jumbotron">
+        <div class="container">
+            <button data-ng-click="homeCtrl.logout()" class="btn btn-lg btn-primary btn-block sign-out">
+                <span class="glyphicon glyphicon-log-out"></span>&nbsp;&nbsp;sign out
+            </button>
+            <h1>Welcome to Sky</h1>
+            <h4>Sky brings you all the latest news, sport and entertainment stories.</h4>
+            <p>
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit. Phasellus hendrerit interdum erat. Vivamus non
+                felis ex. Cum sociis natoque penatibus et magnis dis parturient montes, nascetur ridiculus mus. Nulla
+                pharetra ornare enim, sagittis feugiat diam interdum sed.
+            </p>
+        </div>
+    </div>
+
+    <div class="container" data-ng-if="homeCtrl.isAdmin === false">
+        <h5>Sorry, authentication attempts are displayed here for administrators only.</h5>
+    </div>
+
+    <div class="container" data-ng-if="homeCtrl.isAdmin">
+        <h5>Hello administrator, please review authentication attempts.</h5>
+
+        <div class="btn btn-primary">
+            Auth attempts&nbsp;&nbsp;<span class="badge" data-ng-bind="homeCtrl.authAttempts.length"></span>
+        </div>
+
+        <div class="list-group-item active">
+            <div class="row">
+                <div class="col-xs-3">
+                    <div class="list-header"><span>IP</span></div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="list-header"><span>Datetime</span></div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="list-header"><span>Action</span></div>
+                </div>
+                <div class="col-xs-3">
+                    <div class="list-header"><span>Username</span></div>
+                </div>
+            </div>
+        </div>
+        <a class="list-group-item" data-ng-href="#" data-ng-repeat="authAttempt in homeCtrl.authAttempts"
+             data-ng-class-odd="'odd'" data-ng-class-even="'even'" data-ng-class="{'of-interest':authAttempt.IP==='unknown'}">
+            <div class="row">
+                <div data-ng-bind="authAttempt.IP" class="col-xs-3 ellipsis list-cell"></div>
+                <div data-ng-bind="authAttempt.Datetime" class="col-xs-3 ellipsis list-cell"></div>
+                <div data-ng-bind="authAttempt.Action" class="col-xs-3 ellipsis list-cell"></div>
+                <div data-ng-bind="authAttempt.Username" class="col-xs-3 ellipsis list-cell"></div>
+            </div>
+        </a>
+    </div>
+</div>

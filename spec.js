@@ -29,7 +29,7 @@ describe('API', function(){
       });
   });
 
-  it('/api/login with username/password should have auth: true', function(done){
+  it('/api/login with correct username/password should have auth: true', function(done){
     request(app)
       .get('/api/login?u=admin&p=password')
       .set('Accept', 'application/json')
@@ -38,8 +38,20 @@ describe('API', function(){
         expect(res.body).to.have.property("auth");
         expect(res.body.auth).to.equal(true)
         done();
-      });
-  })
+    });
+  });
+
+  it('/api/login with incorrect username/password should have auth: false', function(done){
+    request(app)
+      .get('/api/login?u=admin&p=something')
+      .set('Accept', 'application/json')
+      .expect(200)
+      .end(function(err, res){
+        expect(res.body).to.have.property("auth");
+        expect(res.body.auth).to.equal(false)
+        done();
+    });
+  });
 });
 
 

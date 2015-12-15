@@ -15,7 +15,7 @@ app.factory('auth', function($http) {
 app.controller("loginController", function($scope, auth, $cookies) {
 
     var logged = $cookies.get('logged')
-    if (logged && logged === true) {
+    if (logged && logged === 'true') {
         // User alread logged in
         console.log('logged', logged);
         $scope.userLogged = true;

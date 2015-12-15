@@ -8,3 +8,7 @@ Few things to comment out:
 
 Personal note: 1 hour isn't much really to provide a good solution.
 
+#Edit
+
+I've been told to add extra 30 mins. I'll add some test to the backend.
+

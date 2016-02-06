@@ -1,0 +1,31 @@
+{
+  "name": "node-app",
+  "version": "1.0.0",
+  "description": "node app for SKY test",
+  "private": true,
+  "scripts": {
+    "start": "node ./server",
+    "test": "NODE_ENV=test ./node_modules/.bin/istanbul test ./node_modules/.bin/_mocha -- --recursive -R spec"
+  },
+  "author": "Daniel Lewis",
+  "license": "ISC",
+  "devDependencies": {
+    "chai": "^3.4.1",
+    "istanbul": "^0.4.1",
+    "mocha": "^2.3.4",
+    "sinon": "^1.17.2",
+    "sinon-chai": "^2.8.0",
+    "supertest": "^1.1.0"
+  },
+  "dependencies": {
+    "ipaddr.js": "^1.0.5",
+    "jsonwebtoken": "^5.4.1",
+    "mongodb": "^2.1.1",
+    "mongoose": "^4.3.1",
+    "node-restify-validation": "^1.0.4",
+    "q": "^1.4.1",
+    "restify": "^4.0.3",
+    "restify-cookies": "^0.2.0",
+    "underscore": "^1.8.3"
+  }
+}

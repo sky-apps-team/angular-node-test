@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html data-ng-app="skyApp" lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Sky App - Dan Lewis</title>
+    <base href='/'>
+    <link rel="icon" type="image/png" href="./favicon.png">
+    <link rel="apple-touch-icon" sizes="120x120" href="./favicon.png">
+
+    <!-- bower:css -->
+    <!-- endbower -->
+
+    <link rel="stylesheet" href="./app.css">
+    <link rel="stylesheet" href="./routes/home/home.css">
+    <link rel="stylesheet" href="./routes/login/login.css">
+
+    <!-- bower:js -->
+    <!-- endbower -->
+
+    <script src="app.js"></script>
+
+    <script src="./routes/home/HomeController.js"></script>
+    <script src="./routes/login/LoginController.js"></script>
+    <script src="./services/loginService.js"></script>
+    <script src="./services/dataService.js"></script>
+
+</head>
+<body>
+<ui-view></ui-view>
+</body>
+</html>

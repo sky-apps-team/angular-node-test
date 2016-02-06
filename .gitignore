@@ -1,0 +1,12 @@
+/.idea/
+/.vagrant/
+/angularApp/dist/
+/angularApp/node_modules # This is a symlink Windows file and needs ignoring
+/nodeApp/node_modules
+
+bower/
+coverage/
+node_modules/
+
+npm-debug.log*
+phantomjsdriver.log
